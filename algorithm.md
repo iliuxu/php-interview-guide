@@ -31,3 +31,35 @@ function bubbleSort(array $array)
 }
 ```
 
+## 选择排序
+
+**原理：**
+
+* 每一趟从待排序的元素中选出最小的元素。
+* 将选出的元素放在已排好序列的末尾。
+* 持续重复上面的步骤，直到全部元素排序完毕。
+
+```php
+function selectionSort(array $array)
+{
+    $len = count($array);
+    if ($len <= 1) {
+        return $array;
+    }
+    for ($i = 0; $i < $len -1; $i ++) {
+        $min = $i;
+        for ($j = $i +1 ; $j < $len; $j ++) {
+            if ($array[$min] > $array[$j]) {
+                $min = $j;
+            }
+        }
+        if ($min != $i) {
+            $temp = $array[$min];
+            $array[$min] = $array[$i];
+            $array[$i] = $temp;
+        }
+    }
+    return $array;
+}
+```
+
