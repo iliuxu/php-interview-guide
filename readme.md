@@ -4,4 +4,7 @@
 
 * [php](php.md)
 * [算法](http://algorithm.md)
+* [MySQL](mysql.md)
+* [Linux](linux.md)
+* [Redis](redis.md)
 
