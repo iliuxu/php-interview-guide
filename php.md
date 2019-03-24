@@ -1,4 +1,4 @@
-# php
+# PHP
 
 # 基础部分
 
@@ -48,3 +48,43 @@ echo date('Y-n-d H:i:s');//这里使用 n，m 和 n 的区别是：n 没有前�
 >
 > 对于较大的数据，传引用比较好 ，这样可以节省内存的开销。
 
+* 反转字符串
+
+```php
+$str = "abc";
+echo strrev($str) . PHP_EOL; //使用php内置函数
+
+//自定义函数实现
+function example(string $str)
+{
+    $len = strlen($str);
+    $out = '';
+    for ($i = $len - 1; $i >= 0; $i--) {
+        $out .= $str[$i];
+    }
+    return $out;
+}
+
+echo example($str) . PHP_EOL;
+```
+
+* 写一个函数将字符串 `open_door`  转换成  `OpenDoor`
+
+```php
+$str = 'open_door';
+
+function example(string $str)
+{
+    $arr = explode('_', $str);
+    foreach ($arr as $key => $value) {
+        $arr[$key] = ucfirst($value);
+    }
+    return implode('', $arr);
+}
+
+echo example($str) . PHP_EOL;
+```
+
+* PHP 处理字符串的常用函数
+* PHP 处理数组的常用函数
+* PHP 处理时间的常用函数
